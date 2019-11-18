@@ -14,15 +14,16 @@ func main() {
 
 	sentence = strings.Replace(sentence, "\n", "", -1)
 
-	// reverse the whole sentence
+	/* beginning of reversing the whole sentence */
 	reversearray := make([]string, len(sentence))
 	sentencelength := len(sentence) - 1
 	for i := sentencelength; i >= 0; i-- {
 		reversearray[sentencelength-i] = string(sentence[i])
 	}
 	fmt.Println(strings.Join(reversearray, ""))
+	/* end of reversing the whole sentence */
 
-	// reverse the words in the sentence
+	/* beginning of reversing the words in the sentence */
 	// reversearray := []string{}
 	// sentencearray := strings.Split(sentence, " ")
 	// for i := 0; i < len(sentencearray); i++ {
@@ -37,4 +38,5 @@ func main() {
 	// 	reversearray = append(reversearray, reverseword)
 	// }
 	// fmt.Println(strings.Join(reversearray, " "))
+	/* end of reversing the words in the sentence */
 }
