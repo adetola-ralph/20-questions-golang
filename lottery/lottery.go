@@ -16,7 +16,9 @@ func main() {
 	// var a string
 	i := 0
 	// numbers := []string{}
-	numbers := make([]string, 3)
+	numberstring := make([]string, 3)
+	numbers := make([]int, 3)
+
 	// numbers := [3]string{}
 	rand.Seed(time.Now().UnixNano())
 
@@ -27,18 +29,52 @@ func main() {
 
 	for i < 3 {
 		// numbers = append(numbers, strconv.Itoa(rand.Intn(10)))
-		numbers[i] = strconv.Itoa(rand.Intn(10))
+		y := rand.Intn(10)
+		numbers[i] = y
+		numberstring[i] = strconv.Itoa(y)
 		i++
 	}
 
-	result := strings.Join(numbers, " ")
+	result := strings.Join(numberstring, " ")
 	fmt.Println(result)
 
 	// if strings.Contains(result, "7") {
 	// if strings.Count(result, "7") == 2 {
-	if strings.Count(result, "7") == 3 {
+	// if strings.Count(result, "7") == 3 {
+	// if allEven(numbers) {
+	if allOdd(numbers) {
 		fmt.Println("Congratulations!")
 	} else {
 		fmt.Println("Try again! Better luck next time.")
 	}
+}
+
+func allEven(arr []int) bool {
+	isEven := false
+
+	for i := 0; i < len(arr); i++ {
+		if arr[i]%2 == 0 {
+			isEven = true
+		} else {
+			isEven = false
+			break
+		}
+	}
+
+	return isEven
+}
+
+func allOdd(arr []int) bool {
+	isOdd := false
+
+	for i := 0; i < len(arr); i++ {
+		if arr[i]%2 == 1 {
+			isOdd = true
+		} else {
+			isOdd = false
+			break
+		}
+	}
+
+	return isOdd
 }
