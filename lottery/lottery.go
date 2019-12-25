@@ -50,31 +50,21 @@ func main() {
 }
 
 func allEven(arr []int) bool {
-	isEven := false
-
 	for i := 0; i < len(arr); i++ {
-		if arr[i]%2 == 0 {
-			isEven = true
-		} else {
-			isEven = false
-			break
+		if arr[i]%2 != 0 {
+			return false
 		}
 	}
 
-	return isEven
+	return true
 }
 
 func allOdd(arr []int) bool {
-	isOdd := false
-
 	for i := 0; i < len(arr); i++ {
-		if arr[i]%2 == 1 {
-			isOdd = true
-		} else {
-			isOdd = false
-			break
+		if arr[i]%2 == 0 {
+			return false
 		}
 	}
 
-	return isOdd
+	return true
 }
