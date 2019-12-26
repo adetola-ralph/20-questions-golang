@@ -24,21 +24,29 @@ func (value myString) reverseWord() string {
 }
 
 func main() {
-	babbler := babble.NewBabbler()
+	score := 50
 
-	// and this
-	wordToReverse := myString(babbler.Babble())
+	for score > 0 {
+		babbler := babble.NewBabbler()
 
-	fmt.Printf("Type %s in reverse: ", wordToReverse)
-	reader := bufio.NewReader(os.Stdin)
-	word, _ := reader.ReadString('\n')
+		// and this
+		wordToReverse := myString(babbler.Babble())
 
-	word = strings.Replace(word, "\n", "", -1)
+		fmt.Printf("Type %s in reverse: ", wordToReverse)
+		reader := bufio.NewReader(os.Stdin)
+		word, _ := reader.ReadString('\n')
 
-	// yes here also
-	if word != wordToReverse.reverseWord() {
-		fmt.Println("❌")
-	} else {
-		fmt.Println("✅")
+		word = strings.Replace(word, "\n", "", -1)
+
+		// yes here also, because I can
+		if word != wordToReverse.reverseWord() {
+			fmt.Println("❌")
+			score = score - 5
+		} else {
+			fmt.Println("✅")
+			score = score + 5
+		}
+
+		fmt.Printf("Your score is now %d \n", score)
 	}
 }
