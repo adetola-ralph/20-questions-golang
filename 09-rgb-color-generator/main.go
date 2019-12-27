@@ -11,9 +11,9 @@ func main() {
 	randGenerator := rand.New(source)
 
 	for true {
-		red := randGenerator.Intn(255)
-		green := randGenerator.Intn(255)
-		blue := randGenerator.Intn(255)
+		red := randGenerator.Intn(256)
+		green := randGenerator.Intn(256)
+		blue := randGenerator.Intn(256)
 
 		fmt.Printf("rgb(%d, %d, %d)\n", red, green, blue)
 		time.Sleep(time.Second)
