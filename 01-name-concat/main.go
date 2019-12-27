@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/adetola-ralph/20-questions-golang/name-concat/util"
+	"github.com/adetola-ralph/20-questions-golang/01-name-concat/util"
 )
 
 func main() {
