@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"time"
 )
 
 func main() {
@@ -19,6 +20,7 @@ func main() {
 
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
+		time.Sleep(1 * time.Second)
 	}
 
 	fileReadErr := scanner.Err()
